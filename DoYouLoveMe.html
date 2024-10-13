@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You Must Love Me</title>
+</head>
+<body>
+    <h1 id="ques">Do You Love Me</h1>
+    <button type="button" id="yes">Yes</button>
+    <button type="button" id="no">No</button>
+    <script>
+        let yes = document.getElementById("yes");
+        let no = document.getElementById("no");
+        
+        let ques = document.getElementById("ques").style;
+        let yesStyle = yes.style;
+        let noStyle = no.style;
+        
+        ques.position = "absolute";
+        yesStyle.position = "absolute";
+        noStyle.position = "absolute";
+        
+        ques.left = "200px";
+        ques.top = "100px";
+        yesStyle.left = "250px";
+        yesStyle.top = "175px";
+        noStyle.left = "325px";
+        noStyle.top = "175px";
+        
+        yesStyle.fontSize = "20px";
+        noStyle.fontSize = "20px";
+        
+        function  YES() {
+            alert("I love you too");
+        }
+        function dontTouchMe() {
+            noStyle.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            noStyle.top = Math.floor(Math.random() * window.innerHeight) + "px";
+        }
+        no.addEventListener("mousemove", dontTouchMe);
+        yes.addEventListener("click", YES);
+    </script>
+</body>
+</html>
